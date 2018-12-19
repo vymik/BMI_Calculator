@@ -17,15 +17,31 @@ $base: 24px;
 $large: 48px;
 $xl: 64px;
 
+@mixin mobile {
+    @media all and (max-width: 800px){
+        @content;
+    } 
+}
+
+@mixin xs {
+    @media all and (max-width: 600px){
+        @content;
+    } 
+}
 
 body {
     font-family: 'Raleway', sans-serif;
     background-color: $primary;
     padding-top: $large;
-    height: 100vh;
     box-shadow: 
         inset 0px 11px 15px -10px black,
         inset 0px -11px 15px -10px black;
+}
+
+@media all and (min-height: 900px){
+    body {
+        height: 100vh;
+    }
 }
 
 .white-box{
@@ -46,12 +62,16 @@ input {
     margin: $small $xs 0;
     font-weight: 600;
     text-align: center;
+    outline:none;
 }
 
 input[type=date] {
     padding-left: $large;
     margin: 0;
     position: relative;
+    outline:none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
@@ -97,6 +117,9 @@ h5 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-top: 0;
+    @include xs{
+        margin-bottom: 0;
+    }
 }
 
 main {
@@ -105,6 +128,10 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
+    @include mobile {
+        width: 85%;
+    }
+    
 }
 
 header {
@@ -117,9 +144,18 @@ header {
 
 .heightWeight-container {
     display: flex;
+    @include mobile {
+        flex-direction: column;
+    }
     .height {
         flex: 1;
         border-right: 1px solid $bg-grey;
+        @include mobile {
+            border-right: none;
+            border-bottom: 1px solid $bg-grey;
+            padding-bottom: $base;
+            margin-bottom: $base;
+        }
     }
     .weight {
         flex: 1;
@@ -128,12 +164,16 @@ header {
         button {
             border: none;
             border-radius: 50px;
+            outline:none;
             padding: $xs $large;
             background-color: $bg-grey;
             color: $main-grey;
             font-weight: 400;
             text-transform: uppercase;
             box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+            @include xs{
+                padding: $xs $base;
+            }
             &:first-child {
                 border-radius: 50px 0 0 50px;
                 margin-right: -3px;
@@ -154,7 +194,10 @@ header {
 
 .gender-container {
     .gender-buttons {
-
+        @include xs {
+            display: flex;
+            flex-direction: column;
+        }
         button {
             border: none;
             width: 200px;
@@ -164,45 +207,67 @@ header {
             background-color: $bg-grey;
             color: $main-grey;
             font-weight: 400;
+            outline:none;
             text-transform: capitalize;
             box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+            @include xs {
+                width: 100%;
+                margin-bottom: $small;
+            }
         }
     }
 }
 
 .bmi-container {
+    span {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
     .triangle-container {
         width: 100%;
         position: relative;
+        @include xs{
+            display: none;
+        }
         img {
             width: 16px;
             display: block;
             position: absolute;
             bottom: 0;
             left: 50%;
+            transform: translate(-50%)
         }
     }
     .diagram-container {
         display: flex;
+        @include xs{
+            display: none;
+        }
         .underweight{
             color: white;
             border-radius: 50px 0 0 50px;
+            box-sizing: border-box;
             padding: $xs $base;
-            flex: 3;
+            // flex: 25;
+            width: 25%;
             background-color: $red;
             border-right: 2px solid white;
         }
         .health-weight {
             color: white;
             padding: $xs $base;
-            flex: 5;
+            // flex: 32.5;
+            width: 32.5%;
+            box-sizing: border-box;
             background-color: $green;
             border-right: 2px solid white;
         }
         .overweight {
             color: white;
             padding: $xs $base;
-            flex: 3;
+            // flex: 25;
+            width:25%;
+            box-sizing: border-box;
             background-color: $yellow;
             border-right: 2px solid white;
         }
@@ -210,7 +275,9 @@ header {
             color: white;
             border-radius: 0 50px 50px 0;
             padding: $xs $base;
-            flex: 2;
+            box-sizing: border-box;
+            // flex: 17.5;
+            width: 17.5%;
             background-color: $red;
         }
     }
@@ -222,14 +289,14 @@ header {
             margin: $xs 0 0;
             position: absolute;
             top: 0;
-            left: 23.5%;
+            left: 25%;
             transform: translate(-50%);
         }
         #second {
             margin: $xs 0 0;
             position: absolute;
             top: 0;
-            left: 59%;
+            left: 57.5%;
             transform: translate(-50%);
         }
         #third {
@@ -238,6 +305,9 @@ header {
             top: 0;
             left: 82.5%;
             transform: translate(-50%);
+        }
+        @include xs{
+            display: none;
         }
     }
 }
