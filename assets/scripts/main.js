@@ -70,38 +70,35 @@ let convertHeightInputValue = () => {
   }
 };
 
-let convertedWeight;
-
 let convertWeightInputValue = () => {
   if (weight.value != "") {
     if (weightMetricButton.className != "active") {
-      convertedWeight = (Number(weight.value) / 0.453592).toFixed(2);
-      weight.value = convertedWeight;
+      weight.value = (Number(weight.value) / 0.453592).toFixed(2);
     } else {
       weight.value = (Number(weight.value) * 0.453592).toFixed(2);
     }
   }
 };
 
-maleButton.addEventListener("click", () => {
-  if (femaleButton.className != "active") {
-    maleButton.classList.toggle("active");
+let outputBMI = () => {
     getBMIHeight();
     getBMIWeight();
     calculateBMI();
     bmiResult.textContent = bmi;
     changeBmiDiagram();
+}
+
+maleButton.addEventListener("click", () => {
+  if (femaleButton.className != "active") {
+    maleButton.classList.toggle("active");
+    outputBMI();
   }
 });
 
 femaleButton.addEventListener("click", () => {
   if (maleButton.className != "active") {
     femaleButton.classList.toggle("active");
-    getBMIHeight();
-    getBMIWeight();
-    calculateBMI();
-    bmiResult.textContent = bmi;
-    changeBmiDiagram();
+    outputBMI();
   }
 });
 
@@ -124,7 +121,6 @@ let getBMIWeight = () => {
 let calculateBMI = () => {
   if (height.value != "" && weight.value != "") {
     bmi = (bmiWeight / bmiHeight ** 2).toFixed(2);
-    console.log(bmi);
   }
 };
 
@@ -146,11 +142,7 @@ weight.addEventListener("keyup", () => {
     weight.value != "" &&
     (maleButton.className == "active" || femaleButton.className == "active")
   ) {
-    getBMIHeight();
-    getBMIWeight();
-    calculateBMI();
-    bmiResult.textContent = bmi;
-    changeBmiDiagram();
+    outputBMI();
   }
 });
 
@@ -159,10 +151,6 @@ height.addEventListener("keyup", () => {
     height.value != "" &&
     (maleButton.className == "active" || femaleButton.className == "active")
   ) {
-    getBMIHeight();
-    getBMIWeight();
-    calculateBMI();
-    bmiResult.textContent = bmi;
-    changeBmiDiagram();
+    outputBMI();
   }
 });
