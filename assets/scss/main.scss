@@ -1,10 +1,10 @@
-@import 'reset';
+@import "reset";
 
 // Colors:
 $primary: #11a8a8;
 $secondary: #523277;
 $red: #ed1c24;
-$yellow: #FDB913;
+$yellow: #fdb913;
 $green: #78a50e;
 $bg-grey: #f2f3f3;
 $disable-grey: #b7b1a9;
@@ -18,297 +18,295 @@ $large: 48px;
 $xl: 64px;
 
 @mixin mobile {
-    @media all and (max-width: 800px){
-        @content;
-    } 
+  @media all and (max-width: 800px) {
+    @content;
+  }
 }
 
 @mixin xs {
-    @media all and (max-width: 600px){
-        @content;
-    } 
+  @media all and (max-width: 600px) {
+    @content;
+  }
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: $primary;
-    padding-top: $large;
-    box-shadow: 
-        inset 0px 11px 15px -10px black,
-        inset 0px -11px 15px -10px black;
+  font-family: "Raleway", sans-serif;
+  background-color: $primary;
+  padding-top: $large;
+  box-shadow: inset 0px 11px 15px -10px black, inset 0px -11px 15px -10px black;
 }
 
-@media all and (min-height: 900px){
-    body {
-        height: 100vh;
-    }
+@media all and (min-height: 900px) {
+  body {
+    height: 100vh;
+  }
 }
 
-.white-box{
-    background-color: white;
-    border-radius: 7px;
-    padding: $base;
-    box-shadow: 0 3px rgba($color: $main-grey, $alpha: 0.2);
-    margin-bottom: $base;
-    &:last-child {
-        margin: $base 0;
-    }
+.white-box {
+  background-color: white;
+  border-radius: 7px;
+  padding: $base;
+  box-shadow: 0 3px rgba($color: $main-grey, $alpha: 0.2);
+  margin-bottom: $base;
+  &:last-child {
+    margin: $base 0;
+  }
 }
 
 input {
-    padding: $xs $small;
-    border-radius: 50px;
-    border: 1px solid $disable-grey;
-    margin: $small $xs 0;
-    font-weight: 600;
-    text-align: center;
-    outline:none;
+  padding: $xs $small;
+  border-radius: 50px;
+  border: 1px solid $disable-grey;
+  margin: $small $xs 0;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
 }
 
-input[type=date] {
-    padding-left: $large;
-    margin: 0;
-    position: relative;
-    outline:none;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+input[type="date"] {
+  padding-left: $large;
+  margin: 0;
+  position: relative;
+  outline: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator {
-    color: transparent;
-    background: none;
-    z-index: 1;
-}
-  
-input[type=date]:before {
-// color: transparent;
-background: none;
-display: block;
-font-family: "Font Awesome 5 Free";
-content: '\f107';
-font-weight: 900;
-/* This is the calendar icon in FontAwesome */
-width: 20px;
-height: 20px;
-position: absolute;
-top: 8px;
-right: 8px;
-color: $primary;
-font-size: 1.25rem;
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
 }
 
-::-webkit-inner-spin-button { display: none; }
+input[type="date"]:before {
+  // color: transparent;
+  background: none;
+  display: block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f107";
+  font-weight: 900;
+  /* This is the calendar icon in FontAwesome */
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: $primary;
+  font-size: 1.25rem;
+}
+
+::-webkit-inner-spin-button {
+  display: none;
+}
 
 label {
-    color: $main-grey;
+  color: $main-grey;
 }
 h1 {
-    font-size: 2rem;
-    font-weight: 100;
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 h2 {
-    font-size: 1.5rem;
-    font-weight: 100;
-    margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-top: 0;
 }
 
 h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 0;
-    @include xs{
-        margin-bottom: 0;
-    }
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  @include xs {
+    margin-bottom: 0;
+  }
 }
 
 main {
-    width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    @include mobile {
-        width: 85%;
-    }
-    
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  @include mobile {
+    width: 85%;
+  }
 }
 
 header {
-    flex: 1;
-    color: white;
-    p {
-        text-align: left;
-    }
+  flex: 1;
+  color: white;
+  p {
+    text-align: left;
+  }
 }
 
 .heightWeight-container {
-    display: flex;
+  display: flex;
+  @include mobile {
+    flex-direction: column;
+  }
+  .height {
+    flex: 1;
+    border-right: 1px solid $bg-grey;
     @include mobile {
-        flex-direction: column;
+      border-right: none;
+      border-bottom: 1px solid $bg-grey;
+      padding-bottom: $base;
+      margin-bottom: $base;
     }
-    .height {
-        flex: 1;
-        border-right: 1px solid $bg-grey;
-        @include mobile {
-            border-right: none;
-            border-bottom: 1px solid $bg-grey;
-            padding-bottom: $base;
-            margin-bottom: $base;
-        }
+  }
+  .weight {
+    flex: 1;
+  }
+  .hw-buttons {
+    button {
+      border: none;
+      border-radius: 50px;
+      outline: none;
+      padding: $xs $large;
+      background-color: $bg-grey;
+      color: $main-grey;
+      font-weight: 400;
+      text-transform: uppercase;
+      box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+      @include xs {
+        padding: $xs $base;
+      }
+      &:first-child {
+        border-radius: 50px 0 0 50px;
+        margin-right: -3px;
+      }
+      &:last-child {
+        border-radius: 0 50px 50px 0;
+      }
     }
-    .weight {
-        flex: 1;
-    }
-    .hw-buttons {
-        button {
-            border: none;
-            border-radius: 50px;
-            outline:none;
-            padding: $xs $large;
-            background-color: $bg-grey;
-            color: $main-grey;
-            font-weight: 400;
-            text-transform: uppercase;
-            box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
-            @include xs{
-                padding: $xs $base;
-            }
-            &:first-child {
-                border-radius: 50px 0 0 50px;
-                margin-right: -3px;
-            }
-            &:last-child {
-                border-radius: 0 50px 50px 0;
-            }
-        }
-    }
+  }
 }
 
 .active {
-    background-color: white !important;
-    color: $primary !important;
-    font-weight: 600 !important;
-    box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3) !important;
+  background-color: white !important;
+  color: $primary !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3) !important;
 }
 
 .gender-container {
-    .gender-buttons {
-        @include xs {
-            display: flex;
-            flex-direction: column;
-        }
-        button {
-            border: none;
-            width: 200px;
-            border-radius: 50px;
-            padding: $xs $xl;
-            margin: 0 $xs;
-            background-color: $bg-grey;
-            color: $main-grey;
-            font-weight: 400;
-            outline:none;
-            text-transform: capitalize;
-            box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
-            @include xs {
-                width: 100%;
-                margin-bottom: $small;
-            }
-        }
+  .gender-buttons {
+    @include xs {
+      display: flex;
+      flex-direction: column;
     }
+    button {
+      border: none;
+      width: 200px;
+      border-radius: 50px;
+      padding: $xs $xl;
+      margin: 0 $xs;
+      background-color: $bg-grey;
+      color: $main-grey;
+      font-weight: 400;
+      outline: none;
+      text-transform: capitalize;
+      box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+      @include xs {
+        width: 100%;
+        margin-bottom: $small;
+      }
+    }
+  }
 }
 
 .bmi-container {
-    span {
-        font-size: 1.5rem;
-        font-weight: 600;
+  span {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .triangle-container {
+    width: 100%;
+    position: relative;
+    @include xs {
+      display: none;
     }
-    .triangle-container {
-        width: 100%;
-        position: relative;
-        @include xs{
-            display: none;
-        }
-        img {
-            width: 16px;
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%)
-        }
+    img {
+      width: 16px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
     }
-    .diagram-container {
-        display: flex;
-        @include xs{
-            display: none;
-        }
-        .underweight{
-            color: white;
-            border-radius: 50px 0 0 50px;
-            box-sizing: border-box;
-            padding: $xs $base;
-            // flex: 25;
-            width: 25%;
-            background-color: $red;
-            border-right: 2px solid white;
-        }
-        .health-weight {
-            color: white;
-            padding: $xs $base;
-            // flex: 32.5;
-            width: 32.5%;
-            box-sizing: border-box;
-            background-color: $green;
-            border-right: 2px solid white;
-        }
-        .overweight {
-            color: white;
-            padding: $xs $base;
-            // flex: 25;
-            width:25%;
-            box-sizing: border-box;
-            background-color: $yellow;
-            border-right: 2px solid white;
-        }
-        .obese {
-            color: white;
-            border-radius: 0 50px 50px 0;
-            padding: $xs $base;
-            box-sizing: border-box;
-            // flex: 17.5;
-            width: 17.5%;
-            background-color: $red;
-        }
+  }
+  .diagram-container {
+    display: flex;
+    @include xs {
+      display: none;
     }
-    .scale-container {
-        display: flex;
-        position: relative;
-        margin-bottom: $base;
-        #first {
-            margin: $xs 0 0;
-            position: absolute;
-            top: 0;
-            left: 25%;
-            transform: translate(-50%);
-        }
-        #second {
-            margin: $xs 0 0;
-            position: absolute;
-            top: 0;
-            left: 57.5%;
-            transform: translate(-50%);
-        }
-        #third {
-            margin: $xs 0 0;
-            position: absolute;
-            top: 0;
-            left: 82.5%;
-            transform: translate(-50%);
-        }
-        @include xs{
-            display: none;
-        }
+    .underweight {
+      color: white;
+      border-radius: 50px 0 0 50px;
+      box-sizing: border-box;
+      padding: $xs $base;
+      // flex: 25;
+      width: 25%;
+      background-color: $red;
+      border-right: 2px solid white;
     }
+    .health-weight {
+      color: white;
+      padding: $xs $base;
+      // flex: 32.5;
+      width: 32.5%;
+      box-sizing: border-box;
+      background-color: $green;
+      border-right: 2px solid white;
+    }
+    .overweight {
+      color: white;
+      padding: $xs $base;
+      // flex: 25;
+      width: 25%;
+      box-sizing: border-box;
+      background-color: $yellow;
+      border-right: 2px solid white;
+    }
+    .obese {
+      color: white;
+      border-radius: 0 50px 50px 0;
+      padding: $xs $base;
+      box-sizing: border-box;
+      // flex: 17.5;
+      width: 17.5%;
+      background-color: $red;
+    }
+  }
+  .scale-container {
+    display: flex;
+    position: relative;
+    margin-bottom: $base;
+    #first {
+      margin: $xs 0 0;
+      position: absolute;
+      top: 0;
+      left: 25%;
+      transform: translate(-50%);
+    }
+    #second {
+      margin: $xs 0 0;
+      position: absolute;
+      top: 0;
+      left: 57.5%;
+      transform: translate(-50%);
+    }
+    #third {
+      margin: $xs 0 0;
+      position: absolute;
+      top: 0;
+      left: 82.5%;
+      transform: translate(-50%);
+    }
+    @include xs {
+      display: none;
+    }
+  }
 }
-

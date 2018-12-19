@@ -16,11 +16,11 @@ body {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: #11a8a8;
   padding-top: 48px;
-  -webkit-box-shadow: inset 0px 11px 15px -10px black, inset 0px -11px 15px -10px black;
-          box-shadow: inset 0px 11px 15px -10px black, inset 0px -11px 15px -10px black;
+  -webkit-box-shadow: inset 0px 11px 15px -10px black, inset 0px -11px 15px -10px black;
+          box-shadow: inset 0px 11px 15px -10px black, inset 0px -11px 15px -10px black;
 }
 
 @media all and (min-height: 900px) {
@@ -52,26 +52,26 @@ input {
   outline: none;
 }
 
-input[type=date] {
+input[type="date"] {
   padding-left: 48px;
   margin: 0;
   position: relative;
   outline: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   color: transparent;
   background: none;
   z-index: 1;
 }
 
-input[type=date]:before {
+input[type="date"]:before {
   background: none;
   display: block;
   font-family: "Font Awesome 5 Free";
-  content: '\f107';
+  content: "\f107";
   font-weight: 900;
   /* This is the calendar icon in FontAwesome */
   width: 20px;
@@ -316,7 +316,7 @@ header p {
   width: 25%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #FDB913;
+  background-color: #fdb913;
   border-right: 2px solid white;
 }
 

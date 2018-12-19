@@ -141,22 +141,28 @@ let changeBmiDiagram = () => {
   triangle.style.left = (bmi - 13.5) * 5 + "%";
 };
 
-weight.addEventListener('keyup', () => {
-    if(weight.value != '' && (maleButton.className == 'active' || femaleButton.className == 'active')){
-        getBMIHeight();
-        getBMIWeight();
-        calculateBMI();
-        bmiResult.textContent = bmi;
-        changeBmiDiagram();
-    }
+weight.addEventListener("keyup", () => {
+  if (
+    weight.value != "" &&
+    (maleButton.className == "active" || femaleButton.className == "active")
+  ) {
+    getBMIHeight();
+    getBMIWeight();
+    calculateBMI();
+    bmiResult.textContent = bmi;
+    changeBmiDiagram();
+  }
 });
 
-height.addEventListener('keyup', () => {
-    if(height.value != '' && (maleButton.className == 'active' || femaleButton.className == 'active')){
-        getBMIHeight();
-        getBMIWeight();
-        calculateBMI();
-        bmiResult.textContent = bmi;
-        changeBmiDiagram();
-    }
+height.addEventListener("keyup", () => {
+  if (
+    height.value != "" &&
+    (maleButton.className == "active" || femaleButton.className == "active")
+  ) {
+    getBMIHeight();
+    getBMIWeight();
+    calculateBMI();
+    bmiResult.textContent = bmi;
+    changeBmiDiagram();
+  }
 });
