@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Your BMI calculator</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta exercitationem eos dolore delectus eaque tempore voluptatem minima distinctio magni fugit similique consectetur reprehenderit quasi culpa error perspiciatis, sequi assumenda placeat facere ducimus quos? Recusandae eveniet, eius iusto voluptatibus aspernatur libero, odit id repellat impedit, similique maiores vero qui voluptas! Alias unde expedita enim sed, distinctio maiores nulla molestias corrupti officiis.</p>
+        </header>
+        <div class="date-container white-box">
+            <h2>Date of birth</h2>
+            <input type="date" name="birthdate" id="birthdate">
+        </div>
+        <div class="heightWeight-container white-box">
+            <div class="height">
+                <h2>Height</h2>
+                <div class="hw-buttons">
+                    <button class="active">Imperial</button>
+                    <button>Metric</button>
+                </div>
+                <input type="number" id="height-input">
+                <label for="height-input">cm</label>
+            </div>
+            <div class="weight">
+                <h2>Weight</h2>
+                <div class="hw-buttons">
+                    <button>Imperial</button>
+                    <button>Metric</button>
+                </div>
+                <input type="number" id="height-input">
+                <label for="height-input">kg</label>
+            </div>
+        </div>
+        <div class="gender-container white-box">
+            <h2>Gender</h2>
+            <div class="gender-buttons">
+                <button>Male</button>
+                <button>Female</button>
+            </div>
+        </div>
+        <div class="bmi-container white-box">
+            <h5>Body mass index (BMI)=<span></span></h5>
+            <div class="triangle-container">
+                <img src="assets/images/Triangle.png" alt="triangle">
+            </div>
+            <div class="diagram-container">
+                <div class="underweight">Underweight</div>
+                <div class="health-weight">Health weight</div>
+                <div class="overweight">Overweight</div>
+                <div class="obese">Obese</div>
+            </div>
+            <div class="scale-container">
+                <h5 id="first">18,5</h5>
+                <h5 id="second">25</h5>
+                <h5 id="third">30</h5>
+            </div>
+        </div>
+    </main>
+    
+    
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

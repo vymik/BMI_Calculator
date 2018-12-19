@@ -1,0 +1,219 @@
+@import 'reset';
+
+// Colors:
+$primary: #11a8a8;
+$secondary: #523277;
+$red: #ed1c24;
+$yellow: #FDB913;
+$green: #78a50e;
+$bg-grey: #f2f3f3;
+$disable-grey: #b7b1a9;
+$main-grey: #3e3934;
+
+//Paddings:
+$xs: 8px;
+$small: 16px;
+$base: 24px;
+$large: 48px;
+$xl: 64px;
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: $primary;
+    padding-top: $large;
+    // height: 100vh;
+    box-shadow: 
+        inset 0px 11px 8px -10px black,
+        inset 0px -11px 8px -10px black;
+}
+
+.white-box{
+    background-color: white;
+    border-radius: 7px;
+    padding: $base;
+    box-shadow: 0 3px rgba($color: $main-grey, $alpha: 0.2);
+    margin-bottom: $base;
+    &:last-child {
+        margin: $base 0;
+    }
+}
+
+input {
+    padding: $xs $small;
+    border-radius: 50px;
+    border: 1px solid $disable-grey;
+    margin: $small $xs;
+    font-weight: 600;
+    text-align: center;
+}
+
+input[type=date] {
+    padding-left: $large;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-top: 0;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+main {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 1;
+    color: white;
+}
+
+// .active {
+//     background-color: white;
+//     color: $primary;
+//     font-weight: 600;
+//     box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3);
+
+// }
+
+.heightWeight-container {
+    display: flex;
+    .height {
+        flex: 1;
+        border-right: 1px solid $primary;
+    }
+    .weight {
+        flex: 1;
+    }
+    .hw-buttons {
+        button {
+            border: none;
+            border-radius: 50px;
+            padding: $xs $large;
+            background-color: $bg-grey;
+            color: $main-grey;
+            font-weight: 400;
+            text-transform: uppercase;
+            box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+            &:first-child {
+                border-radius: 50px 0 0 50px;
+                margin-right: -3px;
+            }
+            &:last-child {
+                border-radius: 0 50px 50px 0;
+            }
+        }
+    }
+}
+
+.heightWeight-container .hw-buttons .active {
+    background-color: white;
+    color: $primary;
+    font-weight: 600;
+    box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3);
+}
+
+.gender-container {
+    .gender-buttons {
+
+        button {
+            border: none;
+            width: 200px;
+            border-radius: 50px;
+            padding: $xs $xl;
+            margin: 0 $xs;
+            background-color: $bg-grey;
+            color: $main-grey;
+            font-weight: 400;
+            text-transform: capitalize;
+            box-shadow: 0 3px 6px rgba($color: $main-grey, $alpha: 0.2);
+        }
+    }
+}
+
+.bmi-container {
+    .triangle-container {
+        width: 100%;
+        position: relative;
+        img {
+            width: 16px;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+    }
+    .diagram-container {
+        display: flex;
+        .underweight{
+            color: white;
+            border-radius: 50px 0 0 50px;
+            padding: $xs $base;
+            flex: 3;
+            background-color: $red;
+            border-right: 2px solid white;
+        }
+        .health-weight {
+            color: white;
+            padding: $xs $base;
+            flex: 5;
+            background-color: $green;
+            border-right: 2px solid white;
+        }
+        .overweight {
+            color: white;
+            padding: $xs $base;
+            flex: 3;
+            background-color: $yellow;
+            border-right: 2px solid white;
+        }
+        .obese {
+            color: white;
+            border-radius: 0 50px 50px 0;
+            padding: $xs $base;
+            flex: 2;
+            background-color: $red;
+        }
+    }
+    .scale-container {
+        display: flex;
+        position: relative;
+        margin-bottom: $base;
+        #first {
+            margin: $xs 0 0;
+            position: absolute;
+            top: 0;
+            left: 23.5%;
+            transform: translate(-50%);
+        }
+        #second {
+            margin: $xs 0 0;
+            position: absolute;
+            top: 0;
+            left: 59%;
+            transform: translate(-50%);
+        }
+        #third {
+            margin: $xs 0 0;
+            position: absolute;
+            top: 0;
+            left: 82.5%;
+            transform: translate(-50%);
+        }
+    }
+}
+
