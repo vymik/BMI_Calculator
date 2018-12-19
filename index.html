@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BMI</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,26 +23,26 @@
             <div class="height">
                 <h2>Height</h2>
                 <div class="hw-buttons">
-                    <button class="active">Imperial</button>
-                    <button>Metric</button>
+                    <button class="" id="heightImperialButton">Imperial</button>
+                    <button class="active" id="heightMetricButton">Metric</button>
                 </div>
                 <input type="number" id="height-input">
-                <label for="height-input">cm</label>
+                <label for="height-input" id="height-label">cm</label>
             </div>
             <div class="weight">
                 <h2>Weight</h2>
                 <div class="hw-buttons">
-                    <button>Imperial</button>
-                    <button>Metric</button>
+                    <button id="weightImperialButton">Imperial</button>
+                    <button class="active" id="weightMetricButton">Metric</button>
                 </div>
-                <input type="number" id="height-input">
-                <label for="height-input">kg</label>
+                <input type="number" id="weight-input">
+                <label for="weight-input" id="weight-label">kg</label>
             </div>
         </div>
         <div class="gender-container white-box">
             <h2>Gender</h2>
             <div class="gender-buttons">
-                <button>Male</button>
+                <button class="">Male</button>
                 <button>Female</button>
             </div>
         </div>

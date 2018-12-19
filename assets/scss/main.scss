@@ -22,10 +22,10 @@ body {
     font-family: 'Raleway', sans-serif;
     background-color: $primary;
     padding-top: $large;
-    // height: 100vh;
+    height: 100vh;
     box-shadow: 
-        inset 0px 11px 8px -10px black,
-        inset 0px -11px 8px -10px black;
+        inset 0px 11px 15px -10px black,
+        inset 0px -11px 15px -10px black;
 }
 
 .white-box{
@@ -43,16 +43,45 @@ input {
     padding: $xs $small;
     border-radius: 50px;
     border: 1px solid $disable-grey;
-    margin: $small $xs;
+    margin: $small $xs 0;
     font-weight: 600;
     text-align: center;
 }
 
 input[type=date] {
     padding-left: $large;
-    margin-bottom: 0;
+    margin: 0;
+    position: relative;
 }
 
+input[type=date]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+}
+  
+input[type=date]:before {
+// color: transparent;
+background: none;
+display: block;
+font-family: "Font Awesome 5 Free";
+content: '\f107';
+font-weight: 900;
+/* This is the calendar icon in FontAwesome */
+width: 20px;
+height: 20px;
+position: absolute;
+top: 8px;
+right: 8px;
+color: $primary;
+font-size: 1.25rem;
+}
+
+::-webkit-inner-spin-button { display: none; }
+
+label {
+    color: $main-grey;
+}
 h1 {
     font-size: 2rem;
     font-weight: 100;
@@ -65,8 +94,9 @@ h2 {
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    margin-top: 0;
 }
 
 main {
@@ -80,21 +110,16 @@ main {
 header {
     flex: 1;
     color: white;
+    p {
+        text-align: left;
+    }
 }
-
-// .active {
-//     background-color: white;
-//     color: $primary;
-//     font-weight: 600;
-//     box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3);
-
-// }
 
 .heightWeight-container {
     display: flex;
     .height {
         flex: 1;
-        border-right: 1px solid $primary;
+        border-right: 1px solid $bg-grey;
     }
     .weight {
         flex: 1;
@@ -120,11 +145,11 @@ header {
     }
 }
 
-.heightWeight-container .hw-buttons .active {
-    background-color: white;
-    color: $primary;
-    font-weight: 600;
-    box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3);
+.active {
+    background-color: white !important;
+    color: $primary !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 4px rgba($color: $primary, $alpha: 0.3) !important;
 }
 
 .gender-container {
