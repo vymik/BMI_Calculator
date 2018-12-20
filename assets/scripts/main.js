@@ -81,11 +81,19 @@ let convertWeightInputValue = () => {
 };
 
 let outputBMI = () => {
+    validation();
     getBMIHeight();
     getBMIWeight();
     calculateBMI();
     bmiResult.textContent = bmi;
     changeBmiDiagram();
+}
+
+
+let validation = () => {
+  if(weight.value == '' || height.value == '' ){
+    alert('Please enter weight and height');
+  } 
 }
 
 maleButton.addEventListener("click", () => {
@@ -161,3 +169,14 @@ height.addEventListener("keyup", () => {
     outputBMI();
   }
 });
+
+weight.addEventListener('keypress', () => {
+  if(weight.value.length > weight.maxLength){
+    weight.value = weight.value.slice(0, weight.maxLength);
+  }
+})
+height.addEventListener('keypress', () => {
+  if(height.value.length > height.maxLength){
+    height.value = height.value.slice(0, height.maxLength);
+  }
+})
