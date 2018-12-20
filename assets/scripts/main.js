@@ -134,7 +134,14 @@ let changeBmiDiagram = () => {
   } else {
     bmiResult.style.color = "#ed1c24";
   }
-  triangle.style.left = (bmi - 13.5) * 5 + "%";
+  let trianglePlace = (bmi - 13.5) * 5;
+  if(trianglePlace >= 0 && trianglePlace <= 100){
+      triangle.style.left = trianglePlace + "%";
+  } else if(trianglePlace < 0) {
+    triangle.style.left = "0%";
+  } else if (trianglePlace > 100){
+    triangle.style.left = "100%";
+  }
 };
 
 weight.addEventListener("keyup", () => {
